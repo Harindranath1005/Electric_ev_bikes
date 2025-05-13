@@ -12,7 +12,7 @@ DB_NAME = os.getenv('DB_NAME')
 DB_USER = os.getenv('DB_USER')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
 mydb = mysql.connector.connect(
-    host=DB_HOST,
+    host=DB_HOST, 
     port=DB_PORT,
     user=DB_USER,
     password=DB_PASSWORD,
@@ -91,7 +91,7 @@ df["Rating"]=round(((df[EV_List[demo_list.index(user_choice[0])]]*0.25)
 +(df[EV_List[demo_list.index(user_choice[2])]]*0.2)
 +(df[EV_List[demo_list.index(user_choice[3])]]*0.2)
 +(df[EV_List[demo_list.index(user_choice[4])]]*0.05)
-+(df[EV_List[demo_list.index(user_choice[5])]]*0.5))*10,1)
++(df[EV_List[demo_list.index(user_choice[5])]]*0.05))*10,1)
 
 df=df.sort_values(["Rating"],ascending=False)
 User_prefered_data=df[['Variant','Rating','Price','battery_capacity_kwh','Power torque', 'riding_range_km','top_speed_kmph','charging_time_0_100_hrs']].head().reset_index(drop=True).copy()
